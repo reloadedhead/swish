@@ -1,6 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { MusicalNoteIcon } from "@heroicons/react/24/solid";
+import { Link } from "@remix-run/react";
 
 export default function Navbar() {
   return (
@@ -21,10 +22,12 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  <MusicalNoteIcon className="block h-6 w-auto lg:hidden fill-indigo-700 dark:fill-slate-500" />
-                  <MusicalNoteIcon className="hidden h-6 w-auto lg:block fill-indigo-700 dark:fill-slate-500" />
-                </div>
+                <Link to="/">
+                  <div className="flex flex-shrink-0 items-center">
+                    <MusicalNoteIcon className="block h-6 w-auto lg:hidden fill-indigo-700 dark:fill-slate-500" />
+                    <MusicalNoteIcon className="hidden h-6 w-auto lg:block fill-indigo-700 dark:fill-slate-500" />
+                  </div>
+                </Link>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {/* Navigation goes here. */}
