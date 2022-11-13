@@ -32,7 +32,7 @@ export default function Button({
       {...rest}
       type={type}
       className={cn(
-        "flex items-center py-2 px-3 text-sm font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500",
+        "flex h-10 items-center py-2 px-3 text-sm font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:ring-transparent",
         VariantStyles[variant]
       )}
     >
