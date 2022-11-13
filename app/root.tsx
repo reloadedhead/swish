@@ -9,7 +9,7 @@ import {
 } from "@remix-run/react";
 import Navbar from "./components/Navbar";
 
-import styles from "./styles/app.css";
+import styles from "~/styles/app.css";
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];

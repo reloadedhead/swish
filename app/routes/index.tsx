@@ -1,34 +1,32 @@
+import type { LinksFunction } from "@remix-run/node";
+import Main from "~/components/Main";
+import animation from "~/styles/animation.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: animation },
+];
+
 export default function Index() {
   return (
-    <main>
-      <div className="bg-gray-50">
-        <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            <span className="block">Swish</span>
-            <span className="block text-indigo-600">
-              Sync YouTube playlist with your Apple Music account.
-            </span>
-          </h2>
-          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-            <div className="inline-flex rounded-md shadow">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
-              >
-                Get started
-              </a>
-            </div>
-            <div className="ml-3 inline-flex rounded-md shadow">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50"
-              >
-                Learn more
-              </a>
-            </div>
-          </div>
-        </div>
+    <Main>
+      <div className="pt-20 pb-32 sm:pt-48 sm:pb-40">
+        <h1 className="text-4xl font-bold tracking-tight text-center sm:text-6xl">
+          <span className="swish-underline swish-underline-black animate-bounce">
+            Swish
+          </span>{" "}
+          your playlists from{" "}
+          <span className="underline underline-offset-8 decoration-red-600 dark:text-white">
+            YouTube
+          </span>{" "}
+          to{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+            Apple Music
+          </span>
+        </h1>
+        <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
+          No ads. No sign-up. No bullshit.
+        </p>
       </div>
-    </main>
+    </Main>
   );
 }
