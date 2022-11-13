@@ -68,8 +68,11 @@ export default function Index() {
             No ads. No sign-up. No bullshit.
           </p>
         </div>
-        <Form className="w-1/3" method="post">
-          <div className="flex space-x-2 items-top">
+        <Form
+          className="w-2/3 flex space-x-2 items-top justify-center"
+          method="post"
+        >
+          <div className="w-2/3">
             <Input
               name="playlistUrl"
               label="Playlist url"
@@ -78,10 +81,10 @@ export default function Index() {
               startIcon={<LinkIcon />}
               error={errors?.playlistUrl}
             />
-            <Button type="submit" disabled={state === "submitting"}>
-              {state === "submitting" ? "Searching..." : "Search"}
-            </Button>
           </div>
+          <Button type="submit" disabled={state === "submitting"}>
+            {state === "submitting" ? "Searching..." : "Search"}
+          </Button>
         </Form>
       </div>
     </Main>
