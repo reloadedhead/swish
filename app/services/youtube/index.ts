@@ -1,4 +1,4 @@
-import { PlaylistItemsResponse } from "./types";
+import type { PlaylistItemsResponse } from "./types";
 
 class YouTube {
   private key: string;
