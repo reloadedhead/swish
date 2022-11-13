@@ -76,7 +76,9 @@ export default function Index() {
             <Input
               name="playlistUrl"
               label="Playlist url"
+              type="url"
               hideLabel
+              required
               placeholder="Enter a YouTube playlist link..."
               startIcon={<LinkIcon />}
               error={errors?.playlistUrl}
