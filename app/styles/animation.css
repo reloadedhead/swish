@@ -1,0 +1,17 @@
+.swish-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .3s ease-in-out;
+}
+
+.swish-underline-black {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#EA489C, #8C5CF5);
+}
+
+.swish-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%
+}
