@@ -6,6 +6,8 @@ import type { LoaderFunction } from "@remix-run/node";
 import youtube from "~/services/youtube";
 import type { PlaylistItem } from "~/types/youtube";
 import Main from "~/components/Main";
+import Toggle from "~/components/Toggle";
+import Button from "~/components/Button";
 
 type LoaderData = {
   videos: PlaylistItem[];
@@ -33,15 +35,19 @@ export default function Playlist() {
   const { videos } = useLoaderData<LoaderData>();
   return (
     <Main>
-      <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-        Playlist overview
-      </h1>
+      <div className="flex flex-row justify-between mb-4">
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+          Playlist overview
+        </h1>
+        <Button>Sync</Button>
+      </div>
       <div className="overflow-x-auto sm:overflow-y-auto relative shadow-md rounded-lg max-h-96 mt-2">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th className="py-3 px-6">#</th>
               <th className="py-3 px-6">Title</th>
+              <th className="py-3 px-6">Sync?</th>
             </tr>
           </thead>
           <tbody className="dark:bg-gray-800">
@@ -57,6 +63,14 @@ export default function Playlist() {
                   >
                     {video.title}
                   </a>
+                </td>
+                <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <Toggle
+                    name={video.id}
+                    label={"sync"}
+                    hideLabel
+                    defaultChecked
+                  />
                 </td>
               </tr>
             ))}
