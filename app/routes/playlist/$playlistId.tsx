@@ -51,7 +51,12 @@ export default function Playlist() {
                   {index + 1}
                 </td>
                 <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  {video.title}
+                  <a
+                    href={`https://www.youtube.com/watch?v=${video.id}&list=${video.playlistId}`}
+                    className="text-indigo-500 hover:underline"
+                  >
+                    {video.title}
+                  </a>
                 </td>
               </tr>
             ))}
