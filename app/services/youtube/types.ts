@@ -7,7 +7,7 @@ export type PlaylistItemResponse = {
     channelId: string;
     title: string;
     description: string;
-    thumbnails: {
+    thumbnails?: {
       default: {
         url: string;
         width: number;

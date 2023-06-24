@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { json } from "@remix-run/node";
 import invariant from "tiny-invariant";
 import type { LoaderFunction } from "@remix-run/node";
@@ -22,7 +22,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   const videos = response.items.map(({ snippet, id }) => ({
     title: snippet.title,
-    thumbnail: snippet.thumbnails.default.url,
+    thumbnail: snippet.thumbnails?.high?.url ?? "",
     id,
     playlistId: snippet.playlistId,
     description: snippet.description,
